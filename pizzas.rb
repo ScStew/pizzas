@@ -17,43 +17,77 @@ def meats() # sausage, pepperoni, hamburger
 	def sausage?
 
 		if 1 == [1,2].sample
-			puts "sausage"
-		else 
-			puts " "
+			print "sausage\n"
 		end
 	end
 	meats << sausage?
 	def pepperoni?
 		if 1 == [1,2].sample
-	 		puts "pepperoni"
-		else 
-			puts ""
+	 		print "pepperoni\n"
 		end
 	end
 	meats << pepperoni?
+	
 	def hamburger?
 		if 1 == [1,2].sample
-			puts "hamburger"
-		else 
-			puts ""
+			print "hamburger\n"
 		end
 	end
+	
 	meats << hamburger?
 end
 
-def veggies()# green peppers, bannana peppers, onion, mushrooms, olives
-
+def veggies()# green peppers, bannana peppers, mushrooms
+	veggies = []
+	
+	def g_peppers?	
+		if 1 == [1,2].sample
+			puts "green peppers"
+		end
 	end
-def special()
-
+	veggies << g_peppers?
+	
+	def b_peppers?
+		if 1 == [1,2].sample
+			puts "bannana peppers"
+		end
+	end
+	veggies << b_peppers?
+	
+	def mushrooms?
+		if 1 == [1,2].sample
+			puts "mushrooms"
+		end
+	end
+	
+	veggies << mushrooms?
 end
 
-def sauces
-	
+def sauces() # sauce, no sauce
+	y =  1 + rand(3)
+	if 
+		y == 1
+		y = "normal"
+	elsif 
+		y == 2
+		y = "bbq"
+	else
+		y = "alfredo"
 	end
-
-	def pizza
-	
+end
+def special() #extra sauce, extra cheese, extra toppings
+ special = []
+ 	def extra_sauce
+		if 1 == [1,2].sample
+ 			puts "extra sauce"
+ 		end
 	end
+special << extra_sauce
 
-	p meats
+
+ end
+end
+
+p special
+
+	
