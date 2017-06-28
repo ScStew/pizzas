@@ -1,4 +1,4 @@
-def crust()
+def crust() # thin, regular, stuffed
 x = 1 + rand(3)
 if 
 	x == 1
@@ -11,11 +11,37 @@ else
 end
 end
 
-def meats()
+def meats() # sausage, pepperoni, hamburger
+	meats = []
 
+	def sausage?
+
+		if 1 == [1,2].sample
+			puts "sausage"
+		else 
+			puts " "
+		end
 	end
+	meats << sausage?
+	def pepperoni?
+		if 1 == [1,2].sample
+	 		puts "pepperoni"
+		else 
+			puts ""
+		end
+	end
+	meats << pepperoni?
+	def hamburger?
+		if 1 == [1,2].sample
+			puts "hamburger"
+		else 
+			puts ""
+		end
+	end
+	meats << hamburger?
+end
 
-def veggies()
+def veggies()# green peppers, bannana peppers, onion, mushrooms, olives
 
 	end
 def special()
@@ -29,4 +55,5 @@ def sauces
 	def pizza
 	
 	end
-p crust
+
+	p meats
