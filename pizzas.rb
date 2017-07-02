@@ -1,14 +1,31 @@
-def crust() # thin, regular, stuffed
-x = 1 + rand(3)
+def size()
+	s = 1 + rand(3)
 	if 
-		x == 1
-		x = "thin"
+		s == 1
+		s = "small"
+		base = 6.00
 	elsif 
-		x == 2
-		x = "regular"
-	else
-		x = "stuffed"
+		s == 2
+		s = "medium"
+		base = 9.00
+	else 
+		s = "large"
+		base = 12.00
 	end
+	puts s
+end
+
+def crust() # thin, regular, stuffed
+	x = 1 + rand(3)
+		if 
+			x == 1
+			x = "thin"
+		elsif 
+			x == 2
+			x = "regular"
+		else
+			x = "stuffed"
+		end
 	puts x
 end
 
@@ -102,7 +119,8 @@ special << extra_cheese
 
 end
 
-def pizza # crust, meats, veggies, sauces, special
+def pizza # size, crust, meats, veggies, sauces, special
+	size
 	crust
 	meats
 	veggies
