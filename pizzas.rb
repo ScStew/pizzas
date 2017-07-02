@@ -1,14 +1,15 @@
 def crust() # thin, regular, stuffed
 x = 1 + rand(3)
-if 
-	x == 1
-	x = "thin"
-elsif 
-	x == 2
-	x = "regular"
-else
-	x = "stuffed"
-end
+	if 
+		x == 1
+		x = "thin"
+	elsif 
+		x == 2
+		x = "regular"
+	else
+		x = "stuffed"
+	end
+	puts x
 end
 
 def meats() # sausage, pepperoni, hamburger
@@ -78,16 +79,44 @@ end
 def special() #extra sauce, extra cheese, extra toppings
  special = []
  	def extra_sauce
-		if 1 == [1,2].sample
+		if 1 == [1,2,3].sample
  			puts "extra sauce"
  		end
 	end
 special << extra_sauce
 
+	def extra_cheese
+		if 1 == [1,2,3].sample
+			puts "extra cheese"
+		end
+	end
 
- end
+special << extra_cheese
+
+	def extra_toppings
+		if 1 == [1,2,3].sample
+			puts "extra toppings"
+		end
+	end
+	special << extra_toppings
+
 end
 
-p special
+def pizza # crust, meats, veggies, sauces, special
+	crust
+	meats
+	veggies
+	sauces
+	special
+end
 
+def order
+	puts "How many would you like?"
+	(gets.chomp.to_i).times do 
+		pizza
+		puts ""
 	
+	end
+end
+
+order
