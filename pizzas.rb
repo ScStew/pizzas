@@ -1,6 +1,6 @@
 
-def size()
-	s = 1 + rand(3)
+def size() 
+	s = 1 + rand(3) # sets a random value between 1 and 3
 	if 
 		s == 1
 		s = "small"
@@ -146,7 +146,7 @@ special << extra_cheese?
 
 end
 
-def pizza # size, crust, meats, veggies, sauces, special
+def pizza # calls the functions size, crust, meats, veggies, sauces, special
 	size
 	crust
 	meats
@@ -154,18 +154,21 @@ def pizza # size, crust, meats, veggies, sauces, special
 	sauces
 	special
 end
+	
 @total = []
-	def price
+	
+	def price # adds together all the different prices
 	base_price = @price + @p1 + @p2 + @p3 + @p4 + @p5
 	tax = 0.06
 	total = (base_price * tax ) + base_price
-	@total << total.round(2)
+	@total << total.round(2) #throws final price of a single pizza into an array to be added together later
 	p total.round(2)
 	end
 
-def order
+def order # main function
 	puts "How many would you like?"
-	(gets.chomp.to_i).times do 
+	@x = gets.chomp.to_i #gets user input
+	(@x).times do 
 		pizza
 		price
 		puts ""
@@ -173,13 +176,12 @@ def order
 	final_price
 end
 
-def final_price
+def final_price # adds together the elements of @total array
 	sum = 0
 	@total.each do |i|
 		sum += i
 	end
-
-	puts sum.round(2)
+	puts "your #{@x} pizzas come to a total of $#{sum.round(2)}"
 end
 
 
