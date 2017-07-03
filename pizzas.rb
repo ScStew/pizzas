@@ -55,6 +55,7 @@ def meats() # sausage, pepperoni, hamburger
 		end
 	end
 		
+
 	def hamburger?()
 		if 1 == [1,2].sample
 			print "hamburger\n"
@@ -100,6 +101,7 @@ def sauces() # sauce, no sauce
 	if 
 		y == 1
 		y = "normal"
+	
 		@p4 = 0
 	elsif 
 		y == 2
@@ -152,20 +154,33 @@ def pizza # size, crust, meats, veggies, sauces, special
 	sauces
 	special
 end
+@total = []
+	def price
+	base_price = @price + @p1 + @p2 + @p3 + @p4 + @p5
+	tax = 0.06
+	total = (base_price * tax ) + base_price
+	@total << total.round(2)
+	p total.round(2)
+	end
 
-def price
-p @price + @p1 + @p2 + @p3 + @p4 + @p5
-end
 def order
 	puts "How many would you like?"
 	(gets.chomp.to_i).times do 
 		pizza
-		
 		price
-
 		puts ""
-	
 	end
+	final_price
 end
+
+def final_price
+	sum = 0
+	@total.each do |i|
+		sum += i
+	end
+
+	puts sum.round(2)
+end
+
 
 order
