@@ -146,6 +146,34 @@ special << extra_cheese?
 
 end
 
+@dc = 0
+
+def delivery
+	if 1 == [1,2,3].sample
+		puts "delivery"
+		@dc = 10
+		tip
+	end
+end
+
+@tp = 0
+
+def tip
+	@speed_of_delivery = 1 + rand(45)
+	if @speed_of_delivery <= 10
+		@tp = 10
+	elsif @speed_of_delivery == (11..30)
+		@tp = 5
+	else 
+		@tp = 2
+	end
+	puts "delivery time #{@speed_of_delivery}min"
+	puts "delivery charge: $#{@dc}   tip:$#{@tp}"
+end
+
+
+
+
 def pizza # calls the functions size, crust, meats, veggies, sauces, special
 	size
 	crust
@@ -158,7 +186,7 @@ end
 @total = []
 	
 	def price # adds together all the different prices
-	base_price = @price + @p1 + @p2 + @p3 + @p4 + @p5
+	base_price = @price + @p1 + @p2 + @p3 + @p4 + @p5 +
 	tax = 0.06
 	total = (base_price * tax ) + base_price
 	@total << total.round(2) #throws final price of a single pizza into an array to be added together later
@@ -174,15 +202,18 @@ def order # main function
 		puts ""
 	end
 	final_price
+	delivery
 end
 
 def final_price # adds together the elements of @total array
-	sum = 0
+	@sum = 0
 	@total.each do |i|
-		sum += i
+		@sum += i
 	end
-	puts "your #{@x} pizzas come to a total of $#{sum.round(2)}"
+	@sum + @dc + @tp
+	puts "your #{@x} pizzas come to a total of $#{@sum.round(2)}"
 end
 
 
 order
+
