@@ -160,14 +160,15 @@ end
 
 def tip
 	@speed_of_delivery = 1 + rand(45)
+	
 	if @speed_of_delivery <= 10
 		@tp = 10
-	elsif @speed_of_delivery == (11..30)
+	
+	else
 		@tp = 5
-	else 
-		@tp = 2
+
 	end
-	puts "delivery time #{@speed_of_delivery}min"
+	puts "delivery time: #{@speed_of_delivery}min"
 	puts "delivery charge: $#{@dc}   tip:$#{@tp}"
 end
 
@@ -186,7 +187,7 @@ end
 @total = []
 	
 	def price # adds together all the different prices
-	base_price = @price + @p1 + @p2 + @p3 + @p4 + @p5 +
+	base_price = @price + @p1 + @p2 + @p3 + @p4 + @p5
 	tax = 0.06
 	total = (base_price * tax ) + base_price
 	@total << total.round(2) #throws final price of a single pizza into an array to be added together later
@@ -201,8 +202,8 @@ def order # main function
 		price
 		puts ""
 	end
-	final_price
 	delivery
+	final_price
 end
 
 def final_price # adds together the elements of @total array
@@ -210,10 +211,11 @@ def final_price # adds together the elements of @total array
 	@total.each do |i|
 		@sum += i
 	end
-	@sum + @dc + @tp
 	puts "your #{@x} pizzas come to a total of $#{@sum.round(2)}"
 end
 
 
-order
 
+order
+@sum2 =@sum + @dc + @tp
+puts "final charge : $#{@sum2.round(2)}"
